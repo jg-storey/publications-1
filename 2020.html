@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title>Publications</title>
+    <link rel="stylesheet" href="pubs.css">
+    <!--<script src="https://cdn.jsdelivr.net/npm/citation-js@0.4.0-8/build/citation.js" type="text/javascript"></script>-->
+    <script src="Citation.js" type="text/javascript"></script>
+
+
+		
+</head>
+
+<body>
+<h1>Robinson Research Institute 2020 Publications</h1>
+  <!--<input type="file" name="inputfile"
+  id="inputfile"> 
+<br> 
+
+<pre id="output"></pre> 
+  -->
+<div id="refdiv"></div>
+	
+		
+ 
+</body>		
+
+<script type="text/javascript"> 
+  /*
+  document.getElementById('inputfile') 
+      .addEventListener('change', function() { 
+        
+      var fr=new FileReader(); 
+      fr.onload=function(){ 
+          //document.getElementById('output') 
+            //      .textContent=fr.result;
+                  console.log(fr.result);
+                  printBib(fr.result); 
+      }   
+      fr.readAsText(this.files[0])
+  }) 
+  */
+  /*
+  window.onload=async function() {  
+        
+      var fr=new FileReader(); 
+      fr.onload=function(){ 
+          document.getElementById('output') 
+                  .textContent=fr.result;
+                  console.log(fr.result);
+                  printBib(fr.result); 
+      }   
+      fr.readAsText(['ref.bib']); 
+      
+  } 
+  */
+
+	let Cite = require('citation-js')
+
+  
+
+  
+   fetch('/RRI2020.bib')
+  .then(response => response.text())
+  .then((data) => {
+    var processedData = processLatex(data)
+    console.log(processedData)
+    printBib(processedData)
+    //console.log(data)
+    //printBib(data); 
+  })
+  
+		
+		let templateName = 'amphyssoc'
+		let template = '<?xml version="1.0" encoding="utf-8"?>\
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">\
+  <info>\
+    <title>American Physics Society</title>\
+    <title-short>APS</title-short>\
+    <id>http://www.zotero.org/styles/american-physics-society</id>\
+    <link href="http://www.zotero.org/styles/american-physics-society" rel="self"/>\
+    <link href="http://www.zotero.org/styles/american-institute-of-physics" rel="template"/>\
+    <link href="http://authors.aps.org/STYLE/ms.html#citations" rel="documentation"/>\
+    <author>\
+      <name>Richard Karnesky</name>\
+      <email>karnesky+zotero@gmail.com</email>\
+      <uri>http://arc.nucapt.northwestern.edu/Richard_Karnesky</uri>\
+    </author>\
+    <category citation-format="numeric"/>\
+    <category field="physics"/>\
+    <summary>Common style use by APS publications.</summary>\
+    <updated>2012-09-27T22:06:38+00:00</updated>\
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>\
+  </info>\
+  <macro name="author">\
+    <names variable="author">\
+      <name delimiter=", " initialize-with=". " and="text"/>\
+      <label form="long" prefix=", " suffix=" "/>\
+      <substitute>\
+        <names variable="editor"/>\
+        <names variable="translator"/>\
+      </substitute>\
+    </names>\
+  </macro>\
+  <macro name="editor">\
+    <names variable="editor">\
+      <label form="verb" suffix=" "/>\
+      <name delimiter=", " initialize-with=". " and="text"/>\
+    </names>\
+  </macro>\
+  <macro name="year-date">\
+    <choose>\
+      <if variable="issued">\
+        <date variable="issued">\
+          <date-part name="year"/>\
+        </date>\
+      </if>\
+      <else>\
+        <text term="no date" form="short"/>\
+      </else>\
+    </choose>\
+  </macro>\
+  <macro name="day-date">\
+    <choose>\
+      <if variable="issued">\
+        <date variable="issued">\
+          <date-part name="day" suffix=" "/>\
+          <date-part name="month" form="long" suffix=" "/>\
+          <date-part name="year"/>\
+        </date>\
+      </if>\
+      <else>\
+        <text term="no date" form="short"/>\
+      </else>\
+    </choose>\
+  </macro>\
+  <macro name="publisher">\
+    <group prefix="(" suffix=")" delimiter=", ">\
+      <text variable="publisher"/>\
+      <text variable="publisher-place" text-case="title"/>\
+      <text macro="year-date"/>\
+    </group>\
+  </macro>\
+  <macro name="edition">\
+    <choose>\
+      <if is-numeric="edition">\
+        <group delimiter=" ">\
+          <number variable="edition" form="ordinal"/>\
+          <text term="edition" form="short"/>\
+        </group>\
+      </if>\
+      <else>\
+        <text variable="edition"/>\
+      </else>\
+    </choose>\
+  </macro>\
+  <citation collapse="citation-number">\
+    <sort>\
+      <key variable="citation-number"/>\
+    </sort>\
+    <layout delimiter="," prefix="&#160;[" suffix="]">\
+      <text variable="citation-number"/>\
+    </layout>\
+  </citation>\
+  <bibliography entry-spacing="0" second-field-align="flush">\
+    <layout suffix=".">\
+      <text variable="citation-number" prefix="[" suffix="]"/>\
+      <text macro="author" suffix=", "/>\
+      <choose>\
+        <if type="bill book graphic legal_case legislation motion_picture report song" match="any">\
+          <group delimiter=" ">\
+            <group delimiter=", ">\
+              <text variable="title" text-case="title" font-style="italic"/>\
+              <text macro="edition"/>\
+            </group>\
+            <group delimiter=", ">\
+              <text macro="publisher"/>\
+              <group delimiter=" ">\
+                <label variable="page" form="short"/>\
+                <text variable="page"/>\
+              </group>\
+            </group>\
+          </group>\
+        </if>\
+        <else-if type="chapter paper-conference" match="any">\
+          <group delimiter=" ">\
+            <text term="in"/>\
+            <group delimiter=", ">\
+              <text variable="container-title" form="short" text-case="title" font-style="italic"/>\
+              <text macro="editor"/>\
+              <text macro="edition"/>\
+            </group>\
+            <group delimiter=", ">\
+              <text macro="publisher"/>\
+              <group delimiter=" ">\
+                <label variable="page" form="short"/>\
+                <text variable="page"/>\
+              </group>\
+            </group>\
+          </group>\
+        </else-if>\
+        <else-if type="patent">\
+          <group delimiter=" ">\
+            <text variable="number"/>\
+            <text macro="day-date" prefix="(" suffix=")"/>\
+          </group>\
+        </else-if>\
+        <else-if type="thesis">\
+          <group delimiter=", ">\
+            <text variable="title" text-case="title"/>\
+            <text variable="genre"/>\
+            <text variable="publisher"/>\
+            <text macro="year-date"/>\
+          </group>\
+        </else-if>\
+        <else>\
+          <group delimiter=" ">\
+            <text variable="container-title" form="short" text-case="title"/>\
+            <group delimiter=", ">\
+              <text variable="volume" font-weight="bold"/>\
+              <group delimiter=" ">\
+                <text variable="page-first" form="short"/>\
+                <text macro="year-date" prefix="(" suffix=")"/>\
+              </group>\
+            </group>\
+          </group>\
+        </else>\
+      </choose>\
+    </layout>\
+  </bibliography>\
+</style>' // The actual XML file
+
+
+let natureTemplate = '<?xml version="1.0" encoding="utf-8"?>\
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">\
+  <info>\
+    <title>Nature</title>\
+    <id>http://www.zotero.org/styles/nature</id>\
+    <link href="http://www.zotero.org/styles/nature" rel="self"/>\
+    <link href="http://www.nature.com/nature/authors/gta/index.html#a5.4" rel="documentation"/>\
+    <link href="http://www.nature.com/srep/publish/guidelines#references" rel="documentation"/>\
+    <author>\
+      <name>Michael Berkowitz</name>\
+      <email>mberkowi@gmu.edu</email>\
+    </author>\
+    <category citation-format="numeric"/>\
+    <category field="science"/>\
+    <category field="generic-base"/>\
+    <issn>0028-0836</issn>\
+    <eissn>1476-4687</eissn>\
+    <updated>2019-10-10T03:01:26+00:00</updated>\
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>\
+  </info>\
+  <macro name="title">\
+    <choose>\
+      <if type="bill book graphic legal_case legislation motion_picture report song" match="any">\
+        <text variable="title" font-style="italic"/>\
+      </if>\
+      <else>\
+        <text variable="title"/>\
+      </else>\
+    </choose>\
+  </macro>\
+  <macro name="author">\
+    <names variable="author">\
+      <name sort-separator=", " delimiter=", " and="symbol" initialize-with=". " delimiter-precedes-last="never" name-as-sort-order="all"/>\
+      <label form="short" prefix=", "/>\
+      <et-al font-style="italic"/>\
+    </names>\
+  </macro>\
+  <macro name="access">\
+    <choose>\
+      <if variable="volume"/>\
+      <else-if variable="DOI">\
+        <text variable="DOI" prefix="doi:"/>\
+      </else-if>\
+    </choose>\
+  </macro>\
+  <macro name="issuance">\
+    <choose>\
+      <if type="bill book graphic legal_case legislation motion_picture song thesis chapter paper-conference" match="any">\
+        <group delimiter="; " suffix=".">\
+          <group delimiter=", " prefix="(" suffix=")">\
+            <text variable="publisher" form="long"/>\
+            <date variable="issued">\
+              <date-part name="year"/>\
+            </date>\
+          </group>\
+        </group>\
+      </if>\
+      <else-if type="report webpage post post-weblog" match="any">\
+        <group delimiter=" ">\
+          <text variable="URL"/>\
+          <date date-parts="year" form="text" variable="issued" prefix="(" suffix=")"/>\
+        </group>\
+      </else-if>\
+      <else>\
+        <date variable="issued" prefix="(" suffix=")">\
+          <date-part name="year"/>\
+        </date>\
+      </else>\
+    </choose>\
+  </macro>\
+  <macro name="container-title">\
+    <choose>\
+      <if type="article-journal">\
+        <text variable="container-title" font-style="italic" form="short"/>\
+      </if>\
+      <else>\
+        <text variable="container-title" font-style="italic"/>\
+      </else>\
+    </choose>\
+  </macro>\
+  <macro name="editor">\
+    <choose>\
+      <if type="chapter paper-conference" match="any">\
+        <names variable="editor" prefix="(" suffix=")">\
+          <label form="short" suffix=" "/>\
+          <name and="symbol" delimiter-precedes-last="never" initialize-with=". " name-as-sort-order="all"/>\
+        </names>\
+      </if>\
+    </choose>\
+  </macro>\
+  <macro name="volume">\
+    <choose>\
+      <if type="article-journal" match="any">\
+        <text variable="volume" font-weight="bold" suffix=","/>\
+      </if>\
+      <else>\
+        <group delimiter=" ">\
+          <label variable="volume" form="short"/>\
+          <text variable="volume"/>\
+        </group>\
+      </else>\
+    </choose>\
+  </macro>\
+  <citation collapse="citation-number">\
+    <sort>\
+      <key variable="citation-number"/>\
+    </sort>\
+    <layout vertical-align="sup" delimiter=",">\
+      <text variable="citation-number"/>\
+    </layout>\
+  </citation>\
+  <bibliography et-al-min="6" et-al-use-first="1" second-field-align="flush" entry-spacing="0" line-spacing="2">\
+    <layout suffix=".">\
+      <text variable="citation-number" suffix="."/>\
+      <group delimiter=" ">\
+        <text macro="author" suffix="."/>\
+        <text macro="title" suffix="."/>\
+        <choose>\
+          <if type="chapter paper-conference" match="any">\
+            <text term="in"/>\
+          </if>\
+        </choose>\
+        <text macro="container-title"/>\
+        <text macro="editor"/>\
+        <text macro="volume"/>\
+        <text variable="page"/>\
+        <text macro="issuance"/>\
+        <text macro="access"/>\
+      </group>\
+    </layout>\
+  </bibliography>\
+</style>'
+
+let natureNoEtAl = '<?xml version="1.0" encoding="utf-8"?>\
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">\
+  <info>\
+    <title>Nature (no "et al.")</title>\
+    <id>http://www.zotero.org/styles/nature-no-et-al</id>\
+    <link href="http://www.zotero.org/styles/nature-no-et-al" rel="self"/>\
+    <link href="http://mts-am.nature.com/cgi-bin/main.plex?form_type=display_auth_instructions#format" rel="documentation"/>\
+    <author>\
+      <name>Michael Berkowitz</name>\
+      <email>mberkowi@gmu.edu</email>\
+    </author>\
+    <category citation-format="numeric"/>\
+    <category field="science"/>\
+    <category field="generic-base"/>\
+    <updated>2014-06-23T03:22:15+00:00</updated>\
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>\
+  </info>\
+  <macro name="title">\
+    <choose>\
+      <if type="bill book graphic legal_case legislation motion_picture report song" match="any">\
+        <text variable="title" font-style="italic"/>\
+      </if>\
+      <else-if type="chapter" match="any"/>\
+      <else>\
+        <text variable="title"/>\
+      </else>\
+    </choose>\
+  </macro>\
+  <macro name="author">\
+    <names variable="author">\
+      <name sort-separator=", " delimiter=", " and="symbol" initialize-with=". " delimiter-precedes-last="never" name-as-sort-order="all"/>\
+      <label form="short" prefix=", "/>\
+      <et-al font-style="italic"/>\
+    </names>\
+  </macro>\
+  <macro name="access">\
+    <choose>\
+      <if variable="volume"/>\
+      <else-if variable="DOI">\
+        <text variable="DOI" prefix="doi:"/>\
+      </else-if>\
+      <else-if variable="URL">\
+        <text term="at"/>\
+        <text variable="URL" prefix=" &lt;" suffix="&gt;"/>\
+      </else-if>\
+    </choose>\
+  </macro>\
+  <macro name="issuance">\
+    <choose>\
+      <if type="bill book graphic legal_case legislation motion_picture report song chapter paper-conference" match="any">\
+        <group delimiter=", " prefix="(" suffix=").">\
+          <text variable="publisher" form="long"/>\
+          <date variable="issued">\
+            <date-part name="year"/>\
+          </date>\
+        </group>\
+      </if>\
+      <else>\
+        <date prefix="(" suffix=")." variable="issued">\
+          <date-part name="year"/>\
+        </date>\
+      </else>\
+    </choose>\
+  </macro>\
+  <macro name="editor">\
+    <choose>\
+      <if type="chapter paper-conference" match="any">\
+        <names variable="editor" prefix="(" suffix=")">\
+          <label form="short" suffix=" "/>\
+          <name and="symbol" delimiter-precedes-last="never" initialize-with=". " name-as-sort-order="all"/>\
+        </names>\
+      </if>\
+    </choose>\
+  </macro>\
+  <citation collapse="citation-number">\
+    <sort>\
+      <key variable="citation-number"/>\
+    </sort>\
+    <layout vertical-align="sup" delimiter=",">\
+      <text variable="citation-number"/>\
+    </layout>\
+  </citation>\
+  <bibliography second-field-align="flush" entry-spacing="0" line-spacing="2">\
+    <layout>\
+      <text variable="citation-number" suffix="."/>\
+      <group delimiter=" ">\
+        <text macro="author" suffix="."/>\
+        <text macro="title" suffix="."/>\
+        <choose>\
+          <if type="chapter paper-conference" match="any">\
+            <text term="in" form="long" plural="false"/>\
+          </if>\
+        </choose>\
+        <text variable="container-title" font-style="italic" form="short"/>\
+        <text macro="editor"/>\
+        <group font-weight="bold">\
+          <text variable="volume" suffix=","/>\
+        </group>\
+        <text variable="page"/>\
+        <text macro="issuance"/>\
+        <text macro="access"/>\
+      </group>\
+    </layout>\
+  </bibliography>\
+</style>'
+
+
+		let config = Cite.plugins.config.get('csl')
+		config.templates.add(templateName, natureNoEtAl)
+		//Cite.plugins.config.get('@csl').templates.add(templateName, template)
+		
+    ///*
+    //let example = new Cite(ref+ref2)
+
+    function printBib(reference){
+    let example = new Cite(reference)
+
+	 // Should implicitly display 
+	 let output = example.format('bibliography', {
+	   format: 'html',
+	   template: templateName,
+	   lang: 'en-US',
+	   append: function (entry) {
+
+            	//return ' doi:<a href="https://doi.org/' + entry.DOI + '">' + entry.DOI + '</a>' +
+              //     ' <span class="altmetric-embed" data-doi="' + entry.DOI + '"></span>'
+
+                   return '<div class="doi">doi:<a href="https://doi.org/' + entry.DOI + '">' + entry.DOI + '</a></div>' 
+          		}
+	 })
+	 console.log(output)
+   let output2 = processSymbols(output)
+	 
+	 document.getElementById("refdiv").innerHTML = output2;
+	
+	
+	 //*/
+
+	/*
+	window.onload=async function() {
+		let config = Cite.plugins.config.get('csl')
+		config.templates.add(templateName, natureTemplate)
+		
+		let cite=await Cite.async('10.1209/0295-5075/113/27003')
+		let bibliography=cite.format('bibliography', {
+			format:'html',
+	   		template: natureTemplate,
+			lang: 'en-US',
+			append: function (entry) {
+            	return ' doi:<a href="https://doi.org/' + entry.DOI + '">' + entry.DOI + '</a>' +
+                   ' <span class="altmetric-embed" data-doi="' + entry.DOI + '"></span>'
+          		}
+			})
+			document.getElementById("refdiv").innerHTML = bibliography;
+			console.log(bibliography)
+			
+		}
+		*/
+}
+
+
+  function processLatex(data){
+    var d2 = data.replace(/\$_{/g,'<sub>')
+    d2 = d2.replace(/}\$/g,'</sub>')
+    return d2;
+  }
+
+  function processSymbols(data){
+    var d2 = data.replace(/\\delta/g, '&delta;')
+    d2 = d2.replace(/\\"o/g,'&ouml;')
+    d2 = d2.replace(/\\'{c}/g,'&#263;')
+    return d2;
+  }
+
+	</script>
+	
+
+</html>
