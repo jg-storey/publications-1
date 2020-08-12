@@ -40,9 +40,8 @@ h1{
 }
 
 .csl-entry{
-
     padding:10px;
-    
+    font-size:1.2em;
 }
 
 .csl-entry:nth-child(even){
