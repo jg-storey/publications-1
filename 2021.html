@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+    <title>2021 Publications</title>
+    <meta name="description" content="Our latest journal articles in superconductivity, magnetic materials, energy and power systems.">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="pubs.css">
+    
+</head>
+
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+  <div class="topnav">
+    <a href="https://robinsonresearchinstitute.github.io/home/index.html">HOME</a>
+    <a class="active" href="2021.html">2021</a>
+    <a href="2020.html">2020</a>
+    <a href="2019.html">2019</a>
+    <a href="2018.html">2018</a>
+    <a href="2017.html">2017</a>
+    <a href="2016.html">2016</a>
+    <a href="2015.html">2015</a>
+    <a href="2014.html">2014</a>
+	  
+    
+      <div class="search-container">
+      
+        <input type="text" placeholder="Search.." id="search">
+        <div class="button-container">
+        <button type="button" onclick="search()" id="search-button"><i class="fa fa-search"></i></button>
+        <button type="button" onclick="reset()"><i class="fa fa-refresh"></i></button>
+        </div>
+    </div>
+</div>
+	
+<h1>Robinson Research Institute 2021 Publications</h1>
+  
+<div id="refdiv"><div class="csl-bib-body">
+  <div data-csl-entry-id="9250587" class="csl-entry">
+    <div class="csl-left-margin">1.</div><div class="csl-right-inline"><b>Application of Epoxy-Bonded FBG Temperature Sensors for High-Temperature Superconductor-Coated Conductor Quench Detection.</b> Y. Liu, R. Mataira, R. Badcock, Z. Jiang &amp; J. Fang. <i>IEEE Transactions on Applied Superconductivity</i> <b>31,</b> 4700308 (2021).</div>
+  <div class="doi">doi:<a href="https://doi.org/10.1109/TASC.2020.3036368" target="_blank">10.1109/TASC.2020.3036368</a></div></div>
+</div></div>
+<hr>	
+<div class="credit texts">Compiled by James Storey </div>				
+
+<script type="text/javascript">
+
+    // Get the input field
+    var input = document.getElementById("search");
+
+    // Execute a function when the user releases a key on the keyboard
+    input.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("search-button").click();
+    }
+    }); 
+
+  function search(){
+    let term = document.getElementById('search').value.toLowerCase();
+    let divs = document.getElementsByClassName("csl-right-inline");
+  
+  for (let x = 0; x < divs.length; x++) {
+      let div = divs[x];
+      let content = div.innerHTML.trim().toLowerCase();
+      if (content.indexOf(term)==-1) {
+          div.parentElement.style.display = 'none';
+      }
+      else{
+        div.parentElement.style.display = 'block';
+      }
+  }
+  }
+  
+  function reset(){
+    document.getElementById('search').value = "";
+    let divs = document.getElementsByClassName("csl-entry");
+    for (let x = 0; x < divs.length; x++) {
+      let div = divs[x];
+        div.style.display = 'block';
+      }
+  }
+
+  </script>
+
+
+  <script>
+    //Get the button:
+  mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  } 
+  </script>
+	
+	
+</body></html>
