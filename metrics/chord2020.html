@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<title>Robinson Research Institute Coauthorship</title>
+	
+		<!-- D3.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+		
+		<!-- jQuery -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Bootstrap -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	
+		<!-- Two scripts to make the Bootstrap tooltip follow the mouse movement
+			 taken from https://github.com/ghophp/bootstrap-popover-move -->
+			 
+		<script src="bootstrap.tooltip.js"></script>
+		<script src="bootstrap.popover.js"></script>
+		
+		<script src="d3.layout.chord.sort.js"></script>
+		
+		<style type="text/css">
+
+			.topnav {
+				overflow: hidden;
+				background-color: #333;
+				margin-top:10px;
+				box-shadow:  0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+				}
+
+				/* Style the links inside the navigation bar */
+				.topnav a {
+				float: left;
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				}
+
+				/* Change the color of links on hover */
+				.topnav a:hover:not(.active) {
+				background-color: #111;
+				}
+
+				/* Style the "active" element to highlight the current page */
+				.topnav a.active {
+				background-color: rgb(0,71,48);
+				color: white;
+            }
+
+            h1{
+                background-color:rgb(0,71,48);
+                color: rgb(255,255,255);
+                padding: 20px;
+                font: 400 15px/1.8 sans-serif;
+                font-size:30px;
+                letter-spacing: 0px;
+            }
+
+			body {
+			  font-size: 14px;
+			  font-family: 'Lato', sans-serif;
+			  text-align: left;
+			  color: #757575;
+			  cursor: default;
+			}
+			
+			.title {
+				margin-top: 20px;
+				margin-bottom: 10px;
+				margin-left: 20px;
+				font-size:32px;
+				font-family: 'Oswald', sans-serif;
+				color: #2B2B2B;
+			}
+			
+			.texts {
+				margin-left: 20px;
+				margin-right: 20px;
+				line-height: 140%;
+			}
+			
+			.credit {
+				color: #9E9E9E;
+				font-size: 10px;
+				margin-bottom: 0.5em;
+			}
+			
+			.notes {
+				color: #9E9E9E;
+				font-size: 10px;
+			}
+			
+			.popover {
+				pointer-events: none;
+			}
+			
+			#chart{
+			  font-size: 16px;
+			 
+			}
+			
+			@media (min-width: 600px) {
+				#chart{
+					font-size: 20px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+			<div class="topnav" id=navbar>
+			<a href="https://robinsonresearchinstitute.github.io/home/index.html">HOME</a>
+			</div>
+
+			<h1>Robinson Research Institute: Coauthorship in 2020</h1>
+		
+		<div class = "explanation texts">
+			<p style="margin-bottom: 0em;">Publications produced between Institute members in 2020. Mouseover for more information.</p>
+			</div>
+		<div id = "chart"></div>
+		<div class="credit texts">Compiled by James Storey </div>
+		
+ 
+		<script src="script2020.js"></script>
+
+  </body>
+</html>
