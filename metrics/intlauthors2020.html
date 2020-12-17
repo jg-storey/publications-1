@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<title>Robinson Research Institute International joint publications in 2020</title>
+        
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="https://d3js.org/topojson.v0.min.js"></script>
+<style>
+path {
+  stroke: white;
+  stroke-width: 0.25px;
+  fill: rgb(0, 71, 48);
+  /*fill: rgb(0, 255, 242);*/
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    /*width: 300px;					
+    height: 42px;*/					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+.topnav {
+				overflow: hidden;
+				background-color: #333;
+				margin-top:10px;
+				box-shadow:  0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+				}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover:not(.active) {
+    background-color: #111;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+    background-color: rgb(0,71,48);
+    color: white;
+}
+
+h1{
+    background-color:rgb(0,71,48);
+    color: rgb(255,255,255);
+    padding: 20px;
+    font: 400 15px/1.8 sans-serif;
+    font-size:30px;
+    letter-spacing: 0px;
+}
+
+.credit {
+				color: #9E9E9E;
+				font-size: 10px;
+				margin-bottom: 0.5em;
+			}
+
+            .explanation,.topnav  {
+			  font-size: 14px;
+			  font-family: 'Lato', sans-serif;
+			  text-align: left;
+			  color: #757575;
+			  cursor: default;
+			}
+
+</style>
+</head>
+<body>
+
+
+<div class="topnav" id=navbar>
+    <a href="https://robinsonresearchinstitute.github.io/home/index.html">HOME</a>
+    </div>
+
+    <h1>Robinson Research Institute: International joint publications in 2020</h1>
+
+<div class = "explanation">
+    <p style="margin-bottom: 2em;">Drag to pan, mousewheel to zoom, mouseover for more details, click to search.</p>
+    </div>
+
+
+<script>
+var width = 960,
+    height = 500;
+
+var projection = d3.geo.mercator()
+    .center([0, 20 ])
+    .scale(150)
+    .rotate([-150,0]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+    
+	
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var g = svg.append("g");
+
+function getTextBox(selection) {
+  selection.each(function(d) {
+    d.bbox = this.getBBox();
+  });
+}
+
+// load and display the World
+d3.json("world-110m2.json", function(error, topology) {
+
+// load and display the cities
+d3.csv("institutions.csv", function(error, data) {
+    g.selectAll("circle")
+       .data(data)
+       .enter()
+       .append("a")
+				  .attr("xlink:href", function(d) {
+					  return "https://www.google.com/search?q="+d.Department+" "+d.Institution;}
+                  )
+                  .attr("target","_blank")
+       .append("circle")
+       .attr("cx", function(d) {
+               return projection([d.lon, d.lat])[0];
+       })
+       .attr("cy", function(d) {
+               return projection([d.lon, d.lat])[1];
+       })
+       .attr("r", function(d) {
+               return 3*Math.sqrt(d.Papers);})
+       .style("fill", "rgb(255,0,255)")
+       .style("fill-opacity", 0.6)
+       .style("stroke","rgb(255,140,255)")
+       .style("stroke-width",1)
+	   .on("mouseover", function(d) {
+            papers = " publication";
+            if(d.Papers>1){
+                papers = " publications";
+            }		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div	.html(d.Department + "<br/>"+d.Institution+"</br>"+d.Papers+papers)	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");
+                	
+            })					
+        .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        });
+
+});
+
+
+g.selectAll("path")
+      .data(topojson.object(topology, topology.objects.countries)
+          .geometries)
+    .enter()
+      .append("path")
+      .attr("d", path)
+});
+
+// zoom and pan
+var zoom = d3.behavior.zoom()
+    .on("zoom",function() {
+        //scale = Math.min(Math.max(d3.event.scale,1),2);
+        scale = d3.event.scale;
+        console.log(scale);
+        //if(scale<2 && scale>1){
+        console.log(d3.event.translate);
+        g.attr("transform","translate("+ 
+            d3.event.translate.join(",")+")scale("+scale+")");
+        g.selectAll("circle")
+			.attr("r",function(d) {
+               return 3*Math.sqrt(d.Papers)/scale;
+               //return d.Papers*d3.event.scale;
+            })
+            .style("stroke-width",function(d) {
+               return 1/scale})	
+            .attr("d", path.projection(projection));
+        g.selectAll("path")  
+            .attr("d", path.projection(projection)); 
+    //}
+  });
+
+svg.call(zoom)
+
+</script>
+
+<div class="credit texts">Compiled by James Storey </div>
+
+</body>
+</html>
