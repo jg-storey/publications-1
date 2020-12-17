@@ -1,0 +1,43 @@
+code,city,country,lat,lon,Department,Institution,Papers
+x,Newcastle,Australia,-32.9283,151.7817,School of Mathematical and Physical Sciences,The University of Newcastle,1
+x,Sydney,Australia,-33.8688,151.2093,Mark Wainwright Analytical Centre,University of New South Wales,1
+x,Sydney,Australia,-33.8688,151.0093,School of Materials Science and Engineering,University of New South Wales,1
+x,Sydney,Australia,-33.8688,151.4093,ARC Centre of Excellence in Future Low-Energy Electronics Technologies,University of New South Wales,1
+x,Wollongong,Australia,-34.4278,150.8931,Department of Materials Engineering,University of Wollongong,1
+x,Wollongong,Australia,-34.4278,151.0931,Institute for Superconducting & Electronic Materials,University of Wollongong,1
+x,Wollongong,Australia,-34.4278,150.6931,"School of Mechanical, Materials, Mechatronic and Biomedical Engineering",University of Wollongong,1
+x,Beijing,China,39.9042,116.4074,School of Electrical Engineering,Beijing Jiaotong University,5
+x,Beijing,China,39.9042,116.6074,Fert Beijing Institute,Beihang University,2
+x,Beijing,China,40.1042,116.4074,Institute of Magnetic Levitation and Electromagnetic Propulsion,Aerospace Science and Industry Corporation,1
+x,Beijing,China,39.7042,116.4074,Beijing National Laboratory for Condensed Matter Physics,University of Chinese Academy of Sciences,1
+x,Beijing,China,39.9042,116.2074,"Bombardier NUG Propulsion System Co., Ltd.",,1
+x,Chengdu,China,30.5728,104.0668,Superconductivity and New Energy R&D Center, Southwest Jiaotong University,1
+x,Shenzhen,China,22.5431,114.0579,Institute for Quantum Science, Southern University of Science and Technology,2
+x,Tianjin,China,39.3434,117.3616,School of Electrical and Information Engineering,Tianjin University,2
+x,Saclay,France,48.7367,2.18,Group of Electrical Engineering Paris,University of Paris-Saclay,1
+x,Valbonne,France,43.6415,7.0092,CRHEA,Universite Cote d'Azur,1
+x,Karlsruhe,Germany,49.0069,8.4037,Institute for Technical Physics,Karlsruhe Institute of Technology,2
+x,Bologna,Italy,44.4949,11.3426,,University of Bologna,1
+x,Chiba,Japan,35.6074,140.1065,Department of Electrical and Electronic Engineering,Chiba University,1
+x,Kuala Lumpur,Malaysia,3.139,101.6869,Department of Physical Science,Tunku Abdul Rahman University College,1
+x,Lahore,Pakistan,31.5204,74.3587,Department of Physics, Government College University Lahore,1
+x,Ekaterinburg,Russia,56.8431,60.6454,M.N. Miheev Institute of Metal Physics,Russian Academy of Sciences,1
+x,,Singapore,1.3521,103.8198,TUMCREATE,,1
+x,,Slovakia,48.669,19.699,Institute of Electrical Engineering,Slovak Academy of Sciences,1
+x,Changwon,South Korea,35.2281,128.6811,Department of Electrical Engineering, Changwon National University,1
+x,Ulsan,South Korea,35.5384,129.3114,Department of Chemistry,Ulsan National Institute of Science and Technology,1
+x,Geneva,Switzerland,46.2044,6.1432,CERN,,1
+x,Lausanne,Switzerland,46.5197,6.6323,Institute of Physics,Ecole Polytechnique Federale de Lausanne,3
+x,Bath,U.K.,51.3811,-2.359,Department of Electronic and Electrical Engineering,University of Bath,3
+x,Bath,U.K.,51.3811,-2.359,Department of Mechanical Engineering,University of Bath,1
+x,Cambridge,U.K.,52.2053,0.1218,Department of Engineering,University of Cambridge,7
+x,Cambridge,U.K.,52.2053,0.1218,Cavendish Laboratory,University of Cambridge,1
+x,Edinburgh,U.K.,55.9533,-3.1883,School of Engineering,University of Edinburgh,2
+x,Glasgow,U.K.,55.8642,-4.2518,Department of Electronic and Electrical Engineering,University of Strathclyde,2
+x,Cambridge,U.S.A.,42.3736,-71.1097,MIT Plasma Science and Fusion Center,M.I.T.,1
+x,Cambridge,U.S.A.,42.3736,-70.9097,Commonwealth Fusion Systems,,1
+x,Columbus,U.S.A.,39.9612,-82.9988,Department of Electrical and Computer Engineering,The Ohio State University,1
+x,Minnesota,U.S.A.,46.7296,-94.6859,Center for Magnetic Resonance Research,University of Minnesota,1
+x,New York,U.S.A.,40.7128,-74.006,Department of Biomedical Engineering,Columbia University,1
+x,Princeton,U.S.A.,40.3573,-74.6672,Kalsi Green Power Systems,,2
+x,Raleigh,U.S.A.,35.7796,-78.6382,Department of Material Science and Engineering,North Carolina State University,1
