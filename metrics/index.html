@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Metrics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: 'Roboto',Arial;
+  /*padding: 20px;*/
+  /*background: #f1f1f1;*/
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 0px;
+  /*font-size: 40px;
+  text-align: center;*/
+  background: white;
+}
+
+h1{
+    background-color:rgb(0,71,48);
+    color: rgb(255,255,255);
+    padding: 20px;
+    font: 400 15px/1.8 sans-serif;
+    font-size:30px;
+    letter-spacing: 0px;
+}
+
+h2{
+  padding-left:20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  max-width:100%;
+}
+
+.iframecontainer {
+  position:relative;
+  overflow: hidden;
+  width: 100.0%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.audioiframecontainer {
+  position:relative;
+  overflow: hidden;
+  width: 100.0%;
+  height:62px;
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+/*.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}*/
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding-top:5px;
+  padding-left: 30px;
+  padding-right:30px;
+  padding-bottom:20px;
+  background-color: #f1f1f1;
+  margin-bottom:20px;
+  max-width:800px;
+  /*margin-left:auto;*/
+  /*margin-right:auto;*/
+}
+
+.card p{
+  line-height: 1.5;
+}
+
+.card h2{
+  padding-left:0px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+.credit {
+    color: #9E9E9E;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    box-shadow:  0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+    li a:hover:not(.active) {
+    background-color: #111;
+  }
+
+  .active {
+    background-color: rgb(0,71,48);
+  }
+
+  #myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color:rgb(0,71,48); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#nextBtn {
+  bottom: 20px; /* Place the button at the bottom of the page */
+  position: relative;
+  margin-top: 20px;
+  left: 50%; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color:rgb(0,71,48); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #333; /* Add a dark-grey background on hover */
+}
+
+</style>
+
+</head>
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+  <ul>
+    <li><a href="https://robinsonresearchinstitute.github.io/home/index.html">HOME</a></li>
+    <!--
+    <li><a class="active" href="#2020">2021</a></li>
+    <li><a href="#2020">2020</a></li>
+    <li><a href="#2019">2019</a></li>
+    <li><a href="#2018">2018</a></li>
+    <li><a href="#2017">2017</a></li>
+    <li><a href="#2016">2016</a></li>
+    <li><a href="#2015">2015</a></li>
+    <li><a href="#2014">2014</a></li>
+    <li><a href="#2013">2013</a></li>
+    -->
+</ul>  
+
+<div class="header">
+  <h1>Robinson Research Institute Publication Metrics</h1>
+</div>
+<div class="card">
+<h2>2020</h2>
+
+<p><a href="bubble2020.html">Where we published</a></p>
+<p><a href="chord2020.html">Coauthorship</a></p>
+<p><a href="intlauthors.html">International joint publications</a></p>
+</div>
+<hr/>    
+  <div class="credit texts">Compiled by James Storey </div>
+  
+  <script>
+    //Get the button:
+  mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  } 
+  </script>
+</body>
+</html>
