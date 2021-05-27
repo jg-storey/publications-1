@@ -75,15 +75,15 @@ color: white;
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 /*@media screen and (max-width: 600px) {*/
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-
+/*
     html { font-size: 1.5rem}
+   
     .topnav a, .search-container, .search-container input[type=text], .button-container, .button-container button  {
   float: none;
   display: block;
   text-align: center;
   width: 100%;
-  /*margin: 0;
-  padding: 0.9rem;*/
+  
 }
 
 h1{
@@ -92,6 +92,15 @@ h1{
 
 .topnav a{
   font-size:1.2rem;
+}
+*/
+
+.search-container, .search-container input[type=text], .button-container, .button-container button  {
+  float: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+  
 }
 
 .topnav input[type=text] {
