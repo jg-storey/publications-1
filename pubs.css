@@ -72,45 +72,7 @@ color: white;
 }
 
 
-/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
-/*@media screen and (max-width: 600px) {*/
-  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-/*
-    html { font-size: 1.5rem}
-   
-    .topnav a, .search-container, .search-container input[type=text], .button-container, .button-container button  {
-  float: none;
-  display: block;
-  text-align: center;
-  width: 100%;
-  
-}
 
-h1{
-  text-align:center;
-}
-
-.topnav a{
-  font-size:1.2rem;
-}
-*/
-
-.search-container, .search-container input[type=text], .button-container, .button-container button  {
-  float: none;
-  display: block;
-  text-align: center;
-  width: 100%;
-  
-}
-
-.topnav input[type=text] {
-  border: 1px solid #ccc;
-}
-.button-container button{
-  border: 1px solid #000;
-}
-
-}
 
 ul {
   list-style-type: none;
@@ -292,4 +254,72 @@ input:checked + .slider:before {
 .doi span{
   padding-top:0.5rem;
   float:right;
+}
+
+
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+ /* @media only screen and (min-device-width : 320px) and (max-device-width : 680px) {*/
+/*
+    html { font-size: 1.5rem}
+   
+    .topnav a, .search-container, .search-container input[type=text], .button-container, .button-container button  {
+  float: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+  
+}
+
+h1{
+  text-align:center;
+}
+
+.topnav a{
+  font-size:1.2rem;
+}
+*/
+
+h1{
+  font-size:1.2rem;
+  line-height: 1.5;
+}
+
+.csl-entry{
+
+  padding:1rem;
+  font-size:1rem;
+  line-height:1.5;
+  
+}
+
+.csl-left-margin{
+ 
+  margin-right:0rem;
+}
+
+.csl-right-inline{
+  margin-left: 2rem;
+}
+
+.doi{
+  margin-left:2rem;
+}
+
+.search-container, .search-container input[type=text], .button-container, .button-container button  {
+  float: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+  
+}
+
+.topnav input[type=text] {
+  border: 1px solid #ccc;
+}
+.button-container button{
+  border: 1px solid #000;
+}
+
 }
