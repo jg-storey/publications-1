@@ -321,5 +321,11 @@ h1{
 .button-container button{
   border: 1px solid #000;
 }
+  
+.doi span{
+  padding-top:0.5rem;
+  padding-bottom:1rem;
+  float:right;
+}
 
 }
