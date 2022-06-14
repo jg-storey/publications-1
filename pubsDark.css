@@ -1,0 +1,378 @@
+body{
+  font-family:  'Roboto','Source Sans Pro','Open Sans','Lato',Helvetica, Arial, sans-serif;
+  /*font-size:100%;*/
+  transition: 0.3s;
+}
+
+
+
+.topnav {
+overflow: hidden;
+background-color: #333;
+box-shadow:  0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+display: block;
+color: white;
+text-align: center;
+padding: 0.9rem 1rem;
+text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover:not(.active) {
+background-color: #111;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+background-color: rgb(0,71,48);
+color: white;
+}
+
+a.homeButton{
+    padding:7.9px 25px;
+}
+
+/*remove extra whitespace under img*/
+a.homeButton img{
+    display:block;
+}
+
+
+
+
+
+
+.search-container {
+  float: right;
+  padding:0.45rem 0;
+  font-size:1.08rem;
+}
+
+.search-container input[type=text] {
+  padding: 0.4rem;
+  margin-top: 0;
+  margin-left: 0;
+  font-size: 1em;
+  border: none;
+}
+
+.button-container{
+  float: right;
+}
+
+.search-container button {
+
+  padding: 0.4rem 0.6rem;
+  margin-top: 0;
+  margin-right: 1rem;
+  background: #ddd;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  color:black;
+}
+
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+.search-container button:focus {
+      color: rgb(0,71,48);
+}
+
+
+
+
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0.9rem 1rem;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+  li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: rgb(0,71,48);
+}
+
+
+h1{
+  background-color:rgb(0,71,48);
+  color: rgb(255,255,255);
+  padding: 1.25rem;
+  /*font: 400 15px/1.8 sans-serif;*/
+  font: 400 0.9rem/1.8 sans-serif;
+  font-size:1.9rem;
+  letter-spacing: 0;
+}
+
+.csl-entry{
+
+  padding:1rem;
+  font-size:1.2rem;
+  line-height:1.5;
+  
+}
+.csl-entry:nth-child(even){
+background-color: rgb(240, 240, 240);
+}
+
+.csl-bib-body{
+max-width:90ch;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+
+.csl-left-margin{
+  float:left;
+  margin-right:1.25rem;
+  font-weight:bold;
+}
+
+.csl-right-inline{
+  margin-left: 3rem;
+}
+
+.csl-right-inline i{
+color:rgb(0, 119, 81);
+}
+
+.doi{
+  margin-left:3rem;
+}
+
+
+
+.credit {
+  color: #9E9E9E;
+  font-size: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+#myBtn {
+display: none; /* Hidden by default */
+position: fixed; /* Fixed/sticky position */
+bottom: 1.25rem; /* Place the button at the bottom of the page */
+right: 1.9rem; /* Place the button 30px from the right */
+z-index: 99; /* Make sure it does not overlap */
+border: none; /* Remove borders */
+outline: none; /* Remove outline */
+background-color:rgb(0,71,48); /* Set a background color */
+color: white; /* Text color */
+cursor: pointer; /* Add a mouse pointer on hover */
+padding: 0.9rem; /* Some padding */
+border-radius: 0.6rem; /* Rounded corners */
+font-size: 1.2rem; /* Increase font size */
+}
+
+#myBtn:hover {
+background-color: #333; /* Add a dark-grey background on hover */
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  top:-2px;
+  margin-left:10px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(0,71,48);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(0,71,48);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/*
+.__dimensions_badge_embed__{
+    display:block;
+}*/
+
+#badgeControl{
+    display:flex;
+    justify-content: right;
+    padding-bottom:1rem;
+    
+}
+
+#badgeControl span{
+    padding-left:2rem;
+}
+
+.doi span{
+  padding-top:0.5rem;
+  float:right;
+}
+
+
+
+.dark{
+    color:#ddd;
+    background-color: #111;
+}
+
+.dark .csl-entry{
+    /*background-color: rgb(0, 27, 19);*/
+    background-color: black;
+}
+.dark .csl-entry:nth-child(even){
+    background-color: #222;
+    }
+
+.dark .csl-entry i{
+    color:rgb(0, 230, 115);
+} 
+
+.dark .csl-entry a{
+    color:rgb(0, 195, 255);
+}
+
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+ /* @media only screen and (min-device-width : 320px) and (max-device-width : 680px) {*/
+/*
+    html { font-size: 1.5rem}
+   
+    .topnav a, .search-container, .search-container input[type=text], .button-container, .button-container button  {
+  float: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+  
+}
+
+h1{
+  text-align:center;
+}
+
+.topnav a{
+  font-size:1.2rem;
+}
+*/
+
+h1{
+  font-size:1.2rem;
+  line-height: 1.5;
+}
+
+.csl-entry{
+
+  padding:1rem;
+  font-size:1rem;
+  line-height:1.5;
+  
+}
+
+.csl-left-margin{
+ 
+  margin-right:0rem;
+}
+
+.csl-right-inline{
+  margin-left: 2rem;
+}
+
+.doi{
+  margin-left:2rem;
+}
+
+.search-container, .search-container input[type=text], .button-container, .button-container button  {
+  float: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+  
+}
+
+.topnav input[type=text] {
+  border: 1px solid #ccc;
+}
+.button-container button{
+  border: 1px solid #000;
+}
+
+.doi span{
+  padding-top:0.5rem;
+  float:none;
+}
+
+
+
+}
