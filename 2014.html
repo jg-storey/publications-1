@@ -41,6 +41,19 @@
     </div>
 </div>
 <h1>Robinson Research Institute 2014 Publications</h1>
+	
+<div id="badgeControl">
+  <span>Dark</span>
+  <label class="switch">
+      <input type="checkbox" id="darkSwitch" onclick="toggle()">
+      <span class="slider round"></span>
+    </label>
+      <span>Badges</span>
+    <label class="switch">
+      <input type="checkbox" id="badgeswitch" onclick="showBadges()" checked>
+      <span class="slider round"></span>
+    </label>
+  </div>
   
 <div id="refdiv"><div class="csl-bib-body">
   <div data-csl-entry-id="PhysRevB.90.245206" class="csl-entry">
@@ -112,81 +125,6 @@ crossover complex with a wide thermal hysteresis loop.</b> Kulmaczewski, R., Olg
   
   <div class="credit texts">Compiled by James Storey </div>	
 	
-<script type="text/javascript">
-
-    // Get the input field
-    var input = document.getElementById("search");
-
-    // Execute a function when the user releases a key on the keyboard
-    input.addEventListener("keyup", function(event) {
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-    document.getElementById("search-button").click();
-    }
-    }); 
-
-  function search(){
-    let term = document.getElementById('search').value.toLowerCase();
-    let divs = document.getElementsByClassName("csl-right-inline");
-  
-  for (let x = 0; x < divs.length; x++) {
-      let div = divs[x];
-      let content = div.innerHTML.trim().toLowerCase();
-      if (content.indexOf(term)==-1) {
-          div.parentElement.style.display = 'none';
-      }
-      else{
-        div.parentElement.style.display = 'block';
-      }
-  }
-  }
-  
-  function reset(){
-    document.getElementById('search').value = "";
-    let divs = document.getElementsByClassName("csl-entry");
-    for (let x = 0; x < divs.length; x++) {
-      let div = divs[x];
-        div.style.display = 'block';
-      }
-  }
-
-  </script>
-
-
-  <script>
-    //Get the button:
-  mybutton = document.getElementById("myBtn");
-  
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function() {scrollFunction()};
-  
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-  
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  } 
-  </script>
-
-	<script>
-	var newScript = document.createElement("script");
-        newScript.src = "https://badge.dimensions.ai/badge.js";
-        var x = document.getElementsByTagName("span");
-        var i;
-        for (i = 0; i < x.length; i++) {
-        //x[i].style.backgroundColor = "red";
-        x[i].appendChild(newScript);
-    } 
-	</script>
+<script type="text/javascript" src="script.js"></script>
 
 </body></html>
