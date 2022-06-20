@@ -76,7 +76,8 @@
   </div>
   <script>
 
-
+var newScript = document.createElement("script");
+        newScript.src = "https://badge.dimensions.ai/badge.js";
 
     function reload(element) {
       url = new URL(window.location);
@@ -85,12 +86,25 @@
       });
       history.pushState('', document.title, url);
       includeHTML(document.getElementById(element.innerHTML), element.innerHTML + '_list.html');
+	    var x = document.getElementsByTagName("span");
+        var i;
+        for (i = 0; i < x.length; i++) {
+        //x[i].style.backgroundColor = "red";
+        x[i].appendChild(newScript);
     }
+	  
+
+        
 
     window.addEventListener('popstate', function (e) {
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.has('year')) {
         includeHTML(document.getElementById(urlParams.get('year')), urlParams.get('year') + '_list.html');
+	      var x = document.getElementsByTagName("span");
+        var i;
+        for (i = 0; i < x.length; i++) {
+        //x[i].style.backgroundColor = "red";
+        x[i].appendChild(newScript);
       }
     })
 
@@ -143,6 +157,11 @@
       history.pushState('', document.title, url);
       includeHTML(document.getElementById(active), active + "_list.html");
     }
+   var x = document.getElementsByTagName("span");
+        var i;
+        for (i = 0; i < x.length; i++) {
+        //x[i].style.backgroundColor = "red";
+        x[i].appendChild(newScript);
   </script>
 
   <script type="text/javascript" src="script.js"></script>
