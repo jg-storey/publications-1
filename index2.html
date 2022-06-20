@@ -86,12 +86,7 @@ var newScript = document.createElement("script");
       });
       history.pushState('', document.title, url);
       includeHTML(document.getElementById(element.innerHTML), element.innerHTML + '_list.html');
-	    var x = document.getElementsByTagName("span");
-        var i;
-        for (i = 0; i < x.length; i++) {
-        //x[i].style.backgroundColor = "red";
-        x[i].appendChild(newScript);
-    }
+	    
     }
 	  
 
@@ -101,12 +96,6 @@ var newScript = document.createElement("script");
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.has('year')) {
         includeHTML(document.getElementById(urlParams.get('year')), urlParams.get('year') + '_list.html');
-	      var x = document.getElementsByTagName("span");
-        var i;
-        for (i = 0; i < x.length; i++) {
-        //x[i].style.backgroundColor = "red";
-        x[i].appendChild(newScript);
-	}
       }
     })
 
@@ -131,7 +120,15 @@ var newScript = document.createElement("script");
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
           if (this.readyState == 4) {
-            if (this.status == 200) { z.innerHTML = this.responseText; }
+            if (this.status == 200) { 
+		    z.innerHTML = this.responseText;
+		    var x = document.getElementsByTagName("span");
+			var i;
+			for (i = 0; i < x.length; i++) {
+			//x[i].style.backgroundColor = "red";
+			x[i].appendChild(newScript);
+		    }
+	    }
             if (this.status == 404) { z.innerHTML = "Page not found."; }
 
           }
@@ -159,12 +156,7 @@ var newScript = document.createElement("script");
       history.pushState('', document.title, url);
       includeHTML(document.getElementById(active), active + "_list.html");
     }
-   var x = document.getElementsByTagName("span");
-        var i;
-        for (i = 0; i < x.length; i++) {
-        //x[i].style.backgroundColor = "red";
-        x[i].appendChild(newScript);
-	}
+   
   </script>
 
   <script type="text/javascript" src="script.js"></script>
