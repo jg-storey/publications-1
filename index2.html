@@ -76,8 +76,7 @@
   </div>
   <script>
 
-var newScript = document.createElement("script");
-        newScript.src = "https://badge.dimensions.ai/badge.js";
+
 
     function reload(element) {
       url = new URL(window.location);
@@ -122,6 +121,8 @@ var newScript = document.createElement("script");
           if (this.readyState == 4) {
             if (this.status == 200) { 
 		    z.innerHTML = this.responseText;
+		    var newScript = document.createElement("script");
+        		newScript.src = "https://badge.dimensions.ai/badge.js";
 		    var x = document.getElementsByTagName("span");
 			var i;
 			for (i = 0; i < x.length; i++) {
