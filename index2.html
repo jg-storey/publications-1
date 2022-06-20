@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="pubsDark.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title></title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+<meta property="og:title" content="Robinson Research Institute 2022 Publications" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://robinson.ac.nz/publications/2022.html" />
+<meta property="og:site_name" content="Robinson Research Institute"/>
+<meta property="og:image" content="http://robinson.ac.nz/publications/2021preview.jpg" />
+<meta property="og:description" content="Our 2022 listing of peer-reviewed journal articles in superconductivity, magnetic materials, power systems and more." />
 
-</head>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="robinson.ac.nz/publications" />    
+<meta name="twitter:title" content="Robinson Research Institute 2022 Publications" />
+<meta name="twitter:description" content="Our 2022 listing of peer-reviewed journal articles in superconductivity, magnetic materials, power systems and more." />  
+<meta name="twitter:image" content="http://robinson.ac.nz/publications/2021preview.jpg" />	
+	
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+    <title>2022 Publications</title>
+    <meta name="description" content="Our latest journal articles in superconductivity, magnetic materials, energy and power systems.">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="pubs.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
 <body>
 
@@ -132,122 +145,7 @@
     }
   </script>
 
-  <script type="text/javascript">
-
-    // Get the input field
-    var input = document.getElementById("search");
-
-    // Execute a function when the user releases a key on the keyboard
-    input.addEventListener("keyup", function (event) {
-      // Number 13 is the "Enter" key on the keyboard
-      //if (event.keyCode === 13) {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      // Trigger the button element with a click
-      document.getElementById("search-button").click();
-      //}
-    });
-
-    function search() {
-      let term = document.getElementById('search').value.toLowerCase();
-      let divs = document.getElementsByClassName("csl-right-inline");
-
-      for (let x = 0; x < divs.length; x++) {
-        let div = divs[x];
-        let content = div.innerHTML.trim().toLowerCase();
-        if (content.indexOf(term) == -1) {
-          div.parentElement.style.display = 'none';
-        }
-        else {
-          div.parentElement.style.display = 'block';
-        }
-      }
-    }
-
-    function reset() {
-      document.getElementById('search').value = "";
-      let divs = document.getElementsByClassName("csl-entry");
-      for (let x = 0; x < divs.length; x++) {
-        let div = divs[x];
-        div.style.display = 'block';
-      }
-    }
-
-  </script>
-
-
-  <script>
-    //Get the button:
-    mybutton = document.getElementById("myBtn");
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () { scrollFunction() };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
-
-    function toggle() {
-      document.body.classList.toggle('dark');
-
-      // Let's say the theme is equal to light
-      let theme = "light";
-      // If the body contains the .dark-theme class...
-      if (document.body.classList.contains("dark")) {
-        // ...then let's make the theme dark
-        theme = "dark";
-      }
-      // Then save the choice in localStorage
-      localStorage.setItem("theme", theme);
-
-    }
-
-
-    // Select the theme preference from localStorage
-    const currentTheme = localStorage.getItem("theme");
-    document.getElementById("darkSwitch").checked = false;
-    // If the current theme in localStorage is "dark"...
-    if (currentTheme == "dark") {
-      // ...then use the .dark-theme class
-      document.body.classList.add("dark");
-      document.getElementById("darkSwitch").checked = true;
-    }
-
-
-
-
-    /*
-      // When the user scrolls the page, execute myFunction
-    window.onscroll = function() {myFunction()};
-    
-    // Get the navbar
-    var navbar = document.getElementById("navbar");
-    
-    // Get the offset position of the navbar
-    var sticky = navbar.offsetTop;
-    
-    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    } 
-    */
-
-  </script>
-
+  <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
