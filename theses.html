@@ -199,18 +199,18 @@
     // Execute a function when the user releases a key on the keyboard
     input.addEventListener("keyup", function (event) {
         // Number 13 is the "Enter" key on the keyboard
-        //if (event.keyCode === 13) {
+        if (event.keyCode === 13) {
         // Cancel the default action, if needed
         event.preventDefault();
         // Trigger the button element with a click
         document.getElementById("search-button").click();
-        //}
+        }
     });
 
     function search() {
         let term = document.getElementById('search').value.toLowerCase();
-        let divs = document.getElementsByClassName("csl-right-inline");
-
+        let divs = document.getElementsByTagName("p");
+        console.log(divs);
         for (let x = 0; x < divs.length; x++) {
             let div = divs[x];
             let content = div.innerHTML.trim().toLowerCase();
@@ -218,20 +218,20 @@
                 div.parentElement.style.display = 'none';
             }
             else {
-                div.parentElement.style.display = 'block';
+                div.parentElement.style.display = '';
             }
         }
     }
 
     function reset() {
         document.getElementById('search').value = "";
-        let divs = document.getElementsByClassName("csl-entry");
+        let divs = document.getElementsByTagName("li");
         for (let x = 0; x < divs.length; x++) {
             let div = divs[x];
-            div.style.display = 'block';
+            div.style.display = '';
         }
     }
-
+    
 </script>
 
 
