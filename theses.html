@@ -218,7 +218,7 @@
     function search() {
         let term = document.getElementById('search').value.toLowerCase();
         let divs = document.getElementsByTagName("p");
-        console.log(divs);
+        
         for (let x = 0; x < divs.length; x++) {
             let div = divs[x];
             let content = div.innerHTML.trim().toLowerCase();
