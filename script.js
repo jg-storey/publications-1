@@ -84,6 +84,14 @@ if (currentTheme == "dark") {
   document.getElementById("darkSwitch").checked = true;
 }
 
+const currentBadgeState = localStorage.getItem("badges");
+    document.getElementById("badgeswitch").checked = true;
+    if(currentBadgeState == "hide"){
+      document.getElementById("badgeswitch").checked = false;
+      localStorage.setItem("badges", "hide");
+    }  
+    showBadges();
+
 var newScript = document.createElement("script");
         newScript.src = "https://badge.dimensions.ai/badge.js";
         var x = document.getElementsByTagName("span");
@@ -98,7 +106,11 @@ var newScript = document.createElement("script");
         let divs = document.getElementsByClassName("__dimensions_badge_embed__");
         
         let checkBox = document.getElementById("badgeswitch");
-
+        if(checkBox.checked){
+          localStorage.setItem("badges", "show");
+        }else{
+          localStorage.setItem("badges", "hide");
+        }  
         for (let x = 0; x < divs.length; x++) {
             let div = divs[x];
             
