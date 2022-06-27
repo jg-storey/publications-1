@@ -122,15 +122,7 @@
             if (this.status == 200) { 
 		    z.innerHTML = this.responseText;
 		    window.__dimensions_embed.addBadges();
-		    /*
-		    var newScript = document.createElement("script");
-        		newScript.src = "https://badge.dimensions.ai/badge.js";
-		    var x = document.getElementsByTagName("span");
-			var i;
-			for (i = 0; i < x.length; i++) {
-			//x[i].style.backgroundColor = "red";
-			x[i].appendChild(newScript);
-		    }*/
+		   showBadges();
 	    }
             if (this.status == 404) { z.innerHTML = "Page not found."; }
 
