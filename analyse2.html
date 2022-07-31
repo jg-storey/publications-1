@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <title>Analyse</title>
+
+    <style>
+       
+        #chart{
+            width:800px;
+            height:600px;
+            margin:auto;
+            /*background-color: bisque;*/
+        }
+
+         /* The Modal (background) */
+.modal {
+  /*display: none;*/ /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #333;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 
+       
+    </style>
+</head>
+
+<body>
+
+    <button onclick='analysePapers()'>Analyse</button>
+    <button id="myBtn">Open Modal</button>
+    <div id="pub_list"></div>
+
+    <div id="journal_count"></div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          
+          <div id="chart">
+            <svg ></svg>
+        </div>
+
+
+        </div>
+      
+      </div>
+
+      
+     
+    </div>
+    <script>
+
+
+        // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+        function includeHTML(file) {
+
+
+            var current = document.getElementsByClassName("active");
+            // If there's no active class
+            if (current.length > 0) {
+                current[0].className = current[0].className = "";
+            }
+            var z, xhttp;
+
+
+            z = document.getElementById("pub_list");
+
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) { z.innerHTML = this.responseText; 
+                            analysePapers();
+                            var modal = document.getElementById("myModal");
+                            modal.style.display="none";
+                        }
+                        if (this.status == 404) { z.innerHTML = "Page not found."; }
+                        
+
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+
+                /*exit the function:*/
+                return;
+
+            }
+        };
+
+
+        includeHTML("2022_list.html");
+
+
+
+        function analysePapers() {
+            document.getElementById('journal_count').innerHTML = '';
+            document.getElementById('pub_list').style.display = 'block';
+            var refs = document.getElementsByTagName('i');
+
+            const count = {};
+
+            for (const journal of refs) {
+                if (count[journal.innerText]) {
+                    count[journal.innerText] += 1;
+                } else {
+                    count[journal.innerText] = 1;
+                }
+            }
+            
+            const sortedkeys = Object.keys(count).sort();
+            
+
+            for (let i = 0; i < sortedkeys.length; i++) {
+                document.getElementById('journal_count').innerHTML += sortedkeys[i] + ': ' + count[sortedkeys[i]] + '</br>';
+            }
+            document.getElementById('journal_count').innerHTML += '<hr> Total ' + refs.length + ' publications.'
+            document.getElementById('pub_list').style.display = 'none';
+
+            var dataset2 = {};
+            var children = []
+            dataset2.children = children;
+            
+            for (const item in count) {
+                var name = item;
+                var numArticles = count[item];
+                var record = {
+                    "Name": name,
+                    "Count": numArticles
+                }
+                dataset2.children.push(record);
+            }
+            var max = 0;
+
+            for (const item in dataset2.children) {
+                if (dataset2.children[item].Count > max) {
+                    max = dataset2.children[item].Count;
+                }
+            }
+
+            plotBubble(dataset2, max);
+        }
+
+
+
+
+
+
+        function plotBubble(dataset, total) {
+            /*dataset = {"children": [
+            {"Name":"Superconductor Science and Technology","Count":11,"Impact":3.067},
+            {"Name":"IEEE Transactions on Applied Superconductivity","Count":10,"Impact":1.75},
+            {"Name":"Applied Physics Letters","Count":2,"Impact":3.597},
+            {"Name":"Journal of Magnetism and Magnetic Materials","Count":2,"Impact":2.717},
+            {"Name":"Materials Research Express","Count":2,"Impact":1.41},
+            {"Name":"IOP Conference Series: Materials Science and Engineering","Count":2,"Impact":0.53},
+            {"Name":"Advanced Electronic Materials","Count":1,"Impact":6.593},
+            {"Name":"Physical Review Applied","Count":1,"Impact":4.194},
+            {"Name":"Scientific Reports","Count":2,"Impact":3.998},
+            {"Name":"Computers and Electronics in Agriculture","Count":1,"Impact":3.858},
+            {"Name":"Frontiers in Chemistry","Count":1,"Impact":3.693},
+            {"Name":"Magnetic Resonance in Medicine","Count":1,"Impact":3.635},
+            {"Name":"Electrical Power and Energy Systems","Count":1,"Impact":3.588},
+            {"Name":"Physical Review B","Count":1,"Impact":3.575},
+            {"Name":"Journal of Physics and Chemistry of Solids","Count":1,"Impact":3.442},
+            {"Name":"Annalen der Physik","Count":1,"Impact":3.317},
+            {"Name":"Journal of Luminescence","Count":1,"Impact":3.28},
+            {"Name":"Journal of Applied Physics","Count":1,"Impact":2.286},
+            {"Name":"Metallurgical and Materials Transactions B","Count":1,"Impact":2.035}
+            ]};*/
+
+
+
+            //var svg = d3.select("svg")
+            //var width = svg.style("width"),
+            //    height = +svg.style("height");
+            //var diameter = 600;
+            var width = 800;
+            var height = 600;
+            var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+            var svg = d3.select("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .attr("class", "bubble");
+
+            var bubble = d3.pack(dataset)
+                .size([width, height])
+                .padding(2.0);
+
+            
+            
+
+            var nodes = d3.hierarchy(dataset)
+                .sum(function (d) { return d.Count; });
+
+            var node = svg.selectAll(".node")
+                .data(bubble(nodes).descendants())
+                .enter()
+                .filter(function (d) {
+                    return !d.children
+                })
+                .append("g")
+                .attr("class", "node")
+                .attr("transform", function (d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
+
+            /*
+            node.append("title")
+                .text(function(d) {
+                    return d.Name + ": " + d.Count;
+                });
+            */
+            node.append("circle")
+                .attr("r", function (d) {
+                    return d.r;
+                })
+
+                .on("mouseover", function (d) {
+                    if (d.value > 1) {
+                        tooltip.html(d.data.Name + "<br>" + d.value + " publications<br>");
+                    } else {
+                        tooltip.html(d.data.Name + "<br>" + d.value + " publication<br>");
+                    }
+                    tooltip.style("visibility", "visible");
+                })
+                .on("mousemove", function () {
+                    return tooltip.style("top", (d3.event.pageY - 20) + "px").style("left", (d3.event.pageX + 20) + "px");
+                })
+                .on("mouseout", function () { return tooltip.style("visibility", "hidden"); })
+
+                .style("fill", function (d, i) {
+                    //return color(i);
+                    //return d3.rgb(0,200,100);
+                    //return d3.rgb( "hsl(120,70%,"+(90-d.data.Count/total*40)+"%)"); 
+                    //return d3.rgb( "hsl(120,70%,"+(90*(1-d.data.Count/total*2))+"%)");
+                    return d3.rgb("hsl(120,70%," + (80 * (1 - 0.4 * d.data.Count / total)) + "%)");
+                });
+
+
+            node.append("text")
+                //.attr("dy", ".2em")
+                .attr("dy", "-1em")
+                .style("text-anchor", "middle")
+                .text(function (d) {
+                    //return d.data.Name.substring(0, d.r / 3);
+                    return d.data.Name;
+                }).on("mouseover", function (d) {
+                    if (d.value > 1) {
+                        tooltip.html(d.data.Name + "<br>" + d.value + " publications<br>");
+                    } else {
+                        tooltip.html(d.data.Name + "<br>" + d.value + " publication<br>");
+                    }
+                    tooltip.style("visibility", "visible");
+                })
+                .on("mousemove", function () {
+                    return tooltip.style("top", (d3.event.pageY - 20) + "px").style("left", (d3.event.pageX + 20) + "px");
+                })
+                .attr("font-family", "sans-serif")
+                .attr("font-size", function (d) {
+                    //return d.r/5;
+                    return 8 + d.r / 20;
+                })
+                .attr("fill", "black")
+                .each(wrap);
+
+
+
+            d3.select(self.frameElement)
+                .style("height", height + "px");
+
+
+
+            function wrap(d) {
+                var text = d3.select(this),
+                    width = d.r * 1.8,
+                    x = 0,
+                    y = function (d, i, nodes) {
+                        return 13 + (i - nodes.length / 2 - 0.5) * 10;;
+                    },
+                    words = text.text().split(/\s+/).reverse(),
+                    word,
+                    line = [],
+                    lineNumber = 0,
+                    lineHeight = 1.1,
+                    tspan = text.text(null).append("tspan").attr("x", x).attr("y", y);
+                while (word = words.pop()) {
+                    line.push(word);
+                    tspan.text(line.join(" "));
+                    if (tspan.node().getComputedTextLength() > width) {
+                        line.pop();
+                        tspan.text(line.join(" "));
+                        line = [word];
+                        tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", (++lineNumber * lineHeight - 1) + "em").text(word);
+                    }
+                }
+            }
+
+
+            var tooltip = d3.select("body")
+                .append("div")
+                .style("position", "absolute")
+                .style("z-index", "10")
+                .style("visibility", "hidden")
+                .style("color", "white")
+                .style("padding", "8px")
+                .style("background-color", "rgba(0, 0, 0, 0.75)")
+                .style("border-radius", "6px")
+                .style("font", "12px sans-serif")
+                .text("tooltip");
+        }
+
+
+    </script>
+
+</body>
+
+</html>
