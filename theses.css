@@ -4,7 +4,9 @@ body{
   transition: 0.3s;
 }
 
-
+html{
+  scroll-behavior: smooth;
+}
 
 .topnav {
 overflow: hidden;
