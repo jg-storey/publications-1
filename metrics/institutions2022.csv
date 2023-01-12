@@ -1,0 +1,56 @@
+code,city,country,lat,lon,Department,Institution,Papers
+x,Brisbane,Australia,-27.4975,153.0137,School of Mechanical and Mining Engineering,University of Queensland,2
+x,Brisbane,Australia,-27.4785,153.0284,"Faculty of Engineering, School of Electrical Engineering & Robotics",Queensland University of Technology,1
+x,Canberra,Australia,-35.2813,149.1183,Research School of Physics,Australian National University,2
+x,Sydney,Australia,-33.8886,151.1873,ARC Centre of Excellence in Exciton Science,University of Sydney,1
+x,Wollongong,Australia,-34.4054,150.8784,Mechatronic and Biomedical Engineering,University of Wollongong,1
+x,Toronto,Canada,43.6629,-79.3957,,University of Toronto,1
+x,Toronto,Canada,43.7228,-79.3729,,Sunnybrook Research Institute,1
+x,Beijing,China,39.9042,116.4074,School of Electrical Engineering,Beijing Jiaotong University,3
+x,Beijing,China,39.9042,116.6074,Fert Beijing Institute,Beihang University,1
+x,Beijing,China,39.9869,116.3059,School of Materials Science and Engineering,Peking University,2
+x,Beijing,China,39.9106,116.3356,,Chinese Academy of Sciences,2
+x,Beijing,China,39.9604,116.3124,School of Optics and Photonics,Beijing Institute of Technology,1
+x,Beijing,China,39.8716,116.4795,College of Materials Science and Engineering,Beijing University of Technology,1
+x,Chengdu,China,30.609,104.1195,School of Engineering,Sichuan Normal University,1
+x,Hong Kong,China,22.4196,114.2068,Department of Physics,The Chinese University of Hong Kong,1
+x,Qingdao,China,36.0688,120.4282,College of Materials Science and Engineering,Qingdao University,1
+x,Shanghai,China,31.2035,121.4146,Center for Advanced Low-Dimension Materials,Donghua University,1
+x,Shenzhen,China,22.54336,114.0549,,International Quantum Academy,1
+x,Wuhan,China,30.513,114.4203,Wuhan National High Magnetic Field Center,Huazhong University of Science and Technology,3
+x,Xi'an,China,34.2508,108.9837,State Key Laboratory for Mechanical Behavior of Materials,Xi'an Jiaotong University,1
+x,Palaiseau,France,48.7099,2.1667,Unit&#233; Mixte de Physique,Universit&#233; Paris-Saclay,1
+x,Paris,France,48.8198,2.3386,Laboratoire Mat&#233;riaux et Ph&#233;nom&#232;nes Quantiques,Universit&#233; Paris Cit&#233;,1
+x,Leipzig,Germany,51.3397,12.3731,,Leipzig University,2
+x,Meschede,Germany,51.36216,8.29549,,Fachhochschule S&#252;dwestfalen,1
+x,M&#252;nchen,Germany,48.1507,11.5805,,Ludwig-Maximilians-Universit&#228;t M&#252;nchen,1
+x,Munich,Germany,48.1497,11.5679,,Technical University of Munich,1
+x,Stuttgart,Germany,48.7466,9.0823,,Max-Planck-Institut f&#252;r Festk&#246;rperforschung,1
+x,W&#252;rzburg,Germany,49.7882,9.9353,Physikalisches Institut,Universit&#228;t W&#252;rzburg,1
+x,Chiba,Japan,35.6074,140.1065,Department of Electrical and Electronic Engineering,Chiba University,1
+x,Kyoto,Japan,35.0262,135.7808,,Kyoto University,3
+x,Nagoya,Japan,35.1539,136.9682,Department of Aerospace Engineering,Nagoya University,1
+x,Osaka,Japan,34.822,135.5245,Institute of Laser Engineering,Osaka University,1
+x,Amsterdam,Netherlands,52.3558,4.9557,Van der Waals-Zeeman Institute,University of Amsterdam,1
+x,Daejeon,Republic of Korea,36.3721,127.3604,,Korea Advanced Institute of Science and Technology,2
+x,Bellatera,Spain,41.5021,2.1039,Institut de Ci&#232;ncia de Materials de Barcelona,Universitat Aut&#242;noma de Barcelona,1
+x,Fribourg,Switzerland,46.8064,7.152,Department of Physics and Fribourg Center for Nanomaterials,University of Fribourg,1
+x,Lausanne,Switzerland,46.5197,6.6323,Institute of Physics,Ecole Polytechnique Federale de Lausanne,1
+x,Hsinchu,Taiwan,24.7961,120.9967,Institute of Photonics Technologies,National Tsing Hua University,1
+x,Abingdon,U.K.,51.65762,-1.22603,,UK Atomic Energy Authority,1
+x,Cambridge,U.K.,52.2053,0.1218,Department of Engineering,University of Cambridge,5
+x,Cambridge,U.K.,52.2053,0.1218,Cavendish Laboratory,University of Cambridge,1
+x,Glasgow,U.K.,55.8724,-4.29,James Watt School of Engineering,University of Glasgow,2
+x,London,U.K.,51.5115,-0.116,Department of Engineering,King's College London,2
+x,Manchester ,U.K.,53.4668,-2.2339,Department of Electrical and Electronic Engineering,University of Manchester,1
+x,Oxford,U.K.,51.7548,-1.2544,Department of Materials,Oxford University,1
+x,Ayer,U.S.A.,42.5552,-71.5733,,American Superconductor Corporation,3
+x,Cambridge,U.S.A.,42.3736,-70.9097,,Commonwealth Fusion Systems,1
+x,College Park,U.S.A.,38.9869,-76.9426,Institute for Research in Electronics and Applied Physics,University of Maryland,1
+x,Columbus,U.S.A.,40.0067,-83.0305,Department of Chemistry and Biochemistry,The Ohio State University,1
+x,Gaithersburg,U.S.A.,39.1402,-77.2185,Physical Measurements Laboratory,National Institute of Standards and Technology,1
+x,Newark,U.S.A.,40.7423,-74.1793,Department of Physics,New Jersey Institute of Technology,1
+x,Stony Brook,U.S.A.,40.9048,-73.124,Department of Physics and Astronomy,State University of New York,1
+x,Syracuse,U.S.A.,43.0392,-76.1351,Department of Mechanical and Aerospace Engineering,Syracuse University,1
+x,Tallahassee,U.S.A.,30.425215,-84.320915,National High Magnetic Field Laboratory,Florida State University,1
+x,Kyiv,Ukraine,50.4443,30.5163,O. O. Galkin Donetsk Institute for Physics and Engineering,National Academy of Sciences of Ukraine,1
