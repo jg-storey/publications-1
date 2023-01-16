@@ -35,8 +35,25 @@
 
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <div class="topnav" id=navbar>
-    <a href="https://robinson.ac.nz/home/" class="homeButton"><img
-        src="favicon-32x32.png" alt="HOME"></img></a>
+	  <div class="dropdown">
+      <!--<button class="dropbtn">Dropdown
+        <i class="fa fa-caret-down"></i>
+      </button>-->
+      <button class="dropbtn" onclick="location.href='https://robinson.ac.nz/home'"><img src="favicon-32x32.png" alt="HOME"></img>
+      </button>
+      <div class="dropdown-content">
+        <a href="https://robinson.ac.nz/home">Home</a>
+        <a href="https://robinson.ac.nz/newsmedia">News</a>
+        <a href="https://robinson.ac.nz/research/brochure.html">Research</a>
+        <a href="https://robinson.ac.nz/publications">Publications</a>
+        <a href="https://robinson.ac.nz/publications/theses.html">Theses</a>
+        <a href="https://robinson.ac.nz/conductors/">Superconductivity</a>
+        <a href="https://robinson.ac.nz/hts-wire-database/">Wire Database</a>
+        <a href="https://robinson.ac.nz/home#contact-page">Vacancies</a>
+      </div>
+    </div>  
+    <!--<a href="https://robinson.ac.nz/home/" class="homeButton"><img
+        src="favicon-32x32.png" alt="HOME"></img></a>-->
     <a id='2023' class="active" href="javascript_required.html" onclick="reload(this);return false;">2023</a>
     <a id='2022' href="javascript_required.html" onclick="reload(this); return false;">2022</a>
     <a id='2021' href="javascript_required.html" onclick="reload(this); return false;">2021</a>
