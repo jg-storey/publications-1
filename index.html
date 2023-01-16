@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	
 <meta property="og:title" content="Robinson Research Institute Publications" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://robinson.ac.nz/publications/" />
 <meta property="og:site_name" content="Robinson Research Institute"/>
-<meta property="og:image" content="http://robinson.ac.nz/publications/2021preview.jpg" />
+<meta property="og:image" content="http://robinson.ac.nz/publications/preview.jpg" />
 <meta property="og:description" content="Our listing of peer-reviewed journal articles in superconductivity, magnetic materials, power systems and more." />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="robinson.ac.nz/publications" />    
 <meta name="twitter:title" content="Robinson Research Institute Publications" />
 <meta name="twitter:description" content="Our listing of peer-reviewed journal articles in superconductivity, magnetic materials, power systems and more." />  
-<meta name="twitter:image" content="http://robinson.ac.nz/publications/2021preview.jpg" />	
+<meta name="twitter:image" content="http://robinson.ac.nz/publications/preview.jpg" />	
 	
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="manifest" href="site.webmanifest">
-    <title>2022 Publications</title>
+    <title>Publications</title>
     <meta name="description" content="Our latest journal articles in superconductivity, magnetic materials, energy and power systems.">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -28,13 +28,32 @@
     <link rel="stylesheet" href="pubs.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-
+  </head>
 <body>
+<div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="crPf1PBZ"></script>
 
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <div class="topnav" id=navbar>
-    <a href="https://robinson.ac.nz/home/" class="homeButton"><img
-        src="favicon-32x32.png" alt="HOME"></img></a>
+	  <div class="dropdown">
+      <!--<button class="dropbtn">Dropdown
+        <i class="fa fa-caret-down"></i>
+      </button>-->
+      <button class="dropbtn" onclick="location.href='https://robinson.ac.nz/home'"><img src="favicon-32x32.png" alt="HOME"></img>
+      </button>
+      <div class="dropdown-content">
+        <a href="https://robinson.ac.nz/home">Home</a>
+        <a href="https://robinson.ac.nz/newsmedia">News</a>
+        <a href="https://robinson.ac.nz/research/brochure.html">Research</a>
+        <a href="https://robinson.ac.nz/publications">Publications</a>
+        <a href="https://robinson.ac.nz/publications/theses.html">Theses</a>
+        <a href="https://robinson.ac.nz/conductors/">Superconductivity</a>
+        <a href="https://robinson.ac.nz/hts-wire-database/">Wire Database</a>
+        <a href="https://robinson.ac.nz/home#contact-page">Vacancies</a>
+      </div>
+    </div>  
+    <!--<a href="https://robinson.ac.nz/home/" class="homeButton"><img
+        src="favicon-32x32.png" alt="HOME"></img></a>-->
     <a id='2023' class="active" href="javascript_required.html" onclick="reload(this);return false;">2023</a>
     <a id='2022' href="javascript_required.html" onclick="reload(this); return false;">2022</a>
     <a id='2021' href="javascript_required.html" onclick="reload(this); return false;">2021</a>
@@ -59,6 +78,18 @@
 
   <div class="content">
     <h1 id="header"></h1>
+    
+    <div id="controlButtons">
+
+  <div id="socialButtons">
+    <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+  <script type="IN/Share" data-url="https://robinson.ac.nz/publications"></script>
+  
+  <div class="fb-share-button" data-href="https://robinson.ac.nz/publications/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frobinson.ac.nz%2Fpublications%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+  <span><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://robinson.ac.nz/publications/" data-show-count="false">Tweet</a></span>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+    
     <div id="badgeControl">
       <span>Dark</span>
       <label class="switch">
@@ -71,6 +102,8 @@
         <span class="slider round"></span>
       </label>
     </div>
+    </div>
+      
     <div id="pub_list"></div>
     <hr />
     <div class="credit texts">Compiled by James Storey </div>
@@ -159,3 +192,4 @@
 </body>
 
 </html>
+
