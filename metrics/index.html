@@ -16,6 +16,42 @@ body {
   /*padding: 20px;*/
   /*background: #f1f1f1;*/
 }
+  
+  .topnav {
+overflow: hidden;
+background-color: var(--nav_colour);
+box-shadow:  0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+display: block;
+color: white;
+text-align: center;
+padding: 0.9rem 1rem;
+text-decoration: none;
+}
+
+
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+background-color: var(--vuw_green);
+color: white;
+}
+
+a.homeButton{
+    padding:7.9px 25px;
+}
+
+/*remove extra whitespace under img*/
+a.homeButton img{
+    display:block;
+}
+
+
+
 
 /* Header/Blog Title */
 .header {
@@ -218,26 +254,101 @@ ul {
 #myBtn:hover {
   background-color: #333; /* Add a dark-grey background on hover */
 }
+  
+  .dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn{
+  /*font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;*/
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+
+
+.dropbtn{
+  background-color: #333;
+            color:white;
+            font-size:1rem;
+            
+  padding:7.9px 25px;
+  border:none;
+}
+
+/*remove extra whitespace under img*/
+.dropbtn img{
+    display:block;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(0,71,48);
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 
 </style>
 
 </head>
 <body>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
-  <ul>
-    <li><a href="https://robinsonresearchinstitute.github.io/home/index.html">HOME</a></li>
-    <!--
-    <li><a class="active" href="#2020">2021</a></li>
-    <li><a href="#2020">2020</a></li>
-    <li><a href="#2019">2019</a></li>
-    <li><a href="#2018">2018</a></li>
-    <li><a href="#2017">2017</a></li>
-    <li><a href="#2016">2016</a></li>
-    <li><a href="#2015">2015</a></li>
-    <li><a href="#2014">2014</a></li>
-    <li><a href="#2013">2013</a></li>
-    -->
-</ul>  
+  <div class="topnav" id=navbar>
+    <div class="dropdown">
+      <!--<button class="dropbtn">Dropdown
+        <i class="fa fa-caret-down"></i>
+      </button>-->
+      <button class="dropbtn" onclick="location.href='https://robinson.ac.nz/home'"><img src="favicon-32x32.png" alt="HOME"></img>
+      </button>
+      <div class="dropdown-content">
+        <a href="https://robinson.ac.nz/home">Home</a>
+        <a href="https://robinson.ac.nz/newsmedia">News</a>
+        <a href="https://robinson.ac.nz/research/brochure.html">Research</a>
+        <a href="https://robinson.ac.nz/publications">Publications</a>
+        <a href="https://robinson.ac.nz/publications/theses.html">Theses</a>
+        <a href="https://robinson.ac.nz/conductors/">Superconductivity</a>
+        <a href="https://robinson.ac.nz/hts-wire-database/">Wire Database</a>
+        <a href="https://robinson.ac.nz/home#contact-page">Vacancies</a>
+      </div>
+    </div>  
+    <!--<a href="https://robinsonresearchinstitute.github.io/home/index.html" class="homeButton"><img src="favicon-32x32.png" alt="HOME"></img></a>-->
+</div>
 
 <div class="header">
   <h1>Robinson Research Institute Publication Metrics</h1>
