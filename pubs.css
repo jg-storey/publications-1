@@ -457,5 +457,15 @@ h1{
   float:none;
   
 }
+  
+  #controlButtons {
+  flex-direction: column;
+}
+
+
+#socialButtons, #badgeControl {
+  margin-top:1rem;
+}
+
 
 }
